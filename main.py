@@ -54,8 +54,9 @@ def main():
         away_score = int(score.split('-')[1])
         # Rule 1: If the score is perfect match then the winner is the person who predicted it.
         for i in data:
-            if i[1] == score:
+            if i[1].replace(' ', '') == score:
                 winners.append(i[0])
+
         # Rule 2: If the score is not a perfect match then the winner is the person who predicted the goal difference correctly.
         # Example: If the score is 2-1 and the predicted scores are 1-0, 3-2, 4-1 then the winner is the persons who predicted 3-2 and 1-0.
         if not winners:
