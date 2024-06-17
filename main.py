@@ -69,7 +69,7 @@ def main():
         if not winners:
             print("Rule 3 Applied")
             for i in data:
-                if (home_score > away_score and i[1].split('-')[0] > i[1].split('-')[1]) or (home_score < away_score and i[1].split('-')[0] < i[1].split('-')[1]):
+                if (home_score > away_score and int(i[1].split('-')[0]) > int(i[1].split('-')[1])) or (home_score < away_score and int(i[1].split('-')[0]) < int(i[1].split('-')[1])):
                     winners.append(i[0])
 
         print("\n".join(winners))
